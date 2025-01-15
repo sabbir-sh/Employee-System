@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('position');
             $table->decimal('salary', 19, 2);
+            $table->string('department');
+            $table->string('profile_picture')->nullable();
             $table->timestamps();
         });
     }

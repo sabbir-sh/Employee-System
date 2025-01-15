@@ -127,7 +127,7 @@
 
         <!-- Sidebar Links -->
         <a href="{{ route('employee.create') }}">
-            <i class="fa-regular fa-user-plus"></i> Add Employee
+            <i class="fa-solid fa-plus"></i> Add Employee
         </a>
         <a href="{{ route('employee.index') }}">
             <i class="fa-regular fa-user"></i> Employee List
