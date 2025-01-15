@@ -40,6 +40,36 @@
         padding-bottom: 10px;
     }
 
+    /* Search Bar Style */
+    .sidebar .search-box {
+        padding: 10px 20px;
+        background-color: #2d2f39;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+    }
+
+    .sidebar .search-box input {
+        width: 100%;
+        padding: 10px;
+        background-color: #343744;
+        border: 1px solid #444c57;
+        color: #ffffff;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .sidebar .search-box input::placeholder {
+        color: #bbbbbb;
+    }
+
+    .sidebar .search-box i {
+        color: #bbbbbb;
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
     /* Sidebar Links */
     .sidebar a {
         text-decoration: none;
@@ -117,7 +147,6 @@
         color: #ff9b9b;
     }
 </style>
-</head>
 
 <body>
 
@@ -125,14 +154,29 @@
         <!-- Sidebar Header -->
         <h3>Dashboard</h3>
 
+        <!-- Search Box -->
+        <div class="search-box">
+            <i class="fa fa-search"></i>
+            <input type="text" placeholder="Search..." id="sidebar-search">
+        </div>
+
         <!-- Sidebar Links -->
-        <a href="{{ route('employee.create') }}">
-            <i class="fa-solid fa-plus"></i> Add Employee
-        </a>
+
         <a href="{{ route('employee.index') }}">
             <i class="fa-regular fa-user"></i> Employee List
         </a>
 
+        <a href="{{ route('employee.create') }}">
+            <i class="fa-solid fa-plus"></i> Add Employee
+        </a>
+
+        <a href="{{ route('tasks.index') }}">
+            <i class="fa-solid fa-list-check"></i> Employee Task List
+        </a>
+
+        <a href="{{ route('tasks.create') }}">
+            <i class="fa-solid fa-plus"></i> Add Employee Task
+        </a>
 
     </div>
 
@@ -150,4 +194,22 @@
                 element.classList.add('active');
             }
         }
+
+        // Search Bar Functionality
+        const searchInput = document.getElementById('sidebar-search');
+        const sidebarLinks = document.querySelectorAll('.sidebar a');
+
+        searchInput.addEventListener('input', function() {
+            const query = searchInput.value.toLowerCase();
+
+            sidebarLinks.forEach(link => {
+                const linkText = link.textContent.toLowerCase();
+                if (linkText.includes(query)) {
+                    link.style.display = 'flex';
+                } else {
+                    link.style.display = 'none';
+                }
+            });
+        });
     </script>
+</body>
