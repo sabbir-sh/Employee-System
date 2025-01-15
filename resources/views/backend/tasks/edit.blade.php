@@ -75,6 +75,7 @@
                                 <option value="completed" {{ $task->status == 'completed' ? 'selected' : '' }}>Completed</option>
                             </select>
                         </div>
+                    </div>
 
                         <!-- Assign To -->
                         <div class="col-md-6 mb-3">

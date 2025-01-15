@@ -53,18 +53,17 @@ class TaskController extends Controller
     /**
      * Update the specified task in storage.
      */
-    public function update(Request $request, Task $task)
-    {
-        $request->validate([
-            'title' => 'max:255',
-            'description' => 'nullable',
-            'status' => 'in:pending,in_progress,completed',
-            'assigned_to' => 'nullable|exists:users,id',
-        ]);
 
-        $task->update($request->all());
-        return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
-    }
+     
+    public function update(Request $request, $id)
+{
+    $task = Task::find($id);
+    $task->status = $request->input('status'); // Update the status
+    $task->save(); // Save the changes to the database
+
+    return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
+
+}
 
     /**
      * Remove the specified task from storage.
