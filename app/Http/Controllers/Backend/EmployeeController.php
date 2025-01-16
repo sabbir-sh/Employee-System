@@ -10,7 +10,8 @@ class EmployeeController extends Controller
 {
     public function index()
     {
-        $employees = Employee::all();
+        // Fetch employees in descending order of creation date
+        $employees = Employee::orderBy('created_at', 'desc')->get();
         return view('backend.employee.index', compact('employees'));
     }
 

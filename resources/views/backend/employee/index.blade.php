@@ -7,7 +7,7 @@
 @endsection
 
 @section('main-content')
-    <div class="container mt-5">
+    <div class="container mt-2">
         <h1 class="text-center">Employee List</h1>
         <a href="{{ route('employee.create') }}" class="btn btn-primary mb-4">Add New Employee</a>
 

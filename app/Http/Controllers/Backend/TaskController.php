@@ -10,10 +10,11 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
     public function index()
-    {
-        $tasks = Task::with('user')->get();
-        return view('backend.tasks.index', compact('tasks'));
-    }
+{
+    // Fetch tasks in descending order of creation date
+    $tasks = Task::with('user')->orderBy('created_at', 'desc')->get();
+    return view('backend.tasks.index', compact('tasks'));
+}
 
     /**
      * Show the form for creating a new task.
@@ -55,15 +56,25 @@ class TaskController extends Controller
      */
 
      
-    public function update(Request $request, $id)
-{
-    $task = Task::find($id);
-    $task->status = $request->input('status'); // Update the status
-    $task->save(); // Save the changes to the database
-
-    return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
-
-}
+     public function update(Request $request, $id)
+     {
+         $task = Task::findOrFail($id);
+     
+         // Validate the request data
+         $request->validate([
+             'title' => 'required|string|max:255',
+             'description' => 'required|string',
+         ]);
+     
+         // Update the task fields
+         $task->title = $request->title;
+         $task->description = $request->description;
+         $task->save();
+     
+         // Redirect with a success message
+         return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
+     }
+     
 
     /**
      * Remove the specified task from storage.
