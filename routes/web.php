@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\HomeBannerController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -10,7 +11,6 @@ use Illuminate\Support\Facades\Route;
 // Frontend View
     //Home Page
     Route::get("/", [HomeController::class,"index"])->name("home");
-
 
 
 

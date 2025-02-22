@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\HomeBannerController;
 use App\Http\Controllers\Backend\TaskController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +26,12 @@ Route::prefix('/admin')->group(function () {
     Route::get('/tasks/{id}', [TaskController::class, 'show'])->name('tasks.show'); // Show task details
     Route::delete('/tasks/{id}', [TaskController::class, 'destroy'])->name('tasks.destroy'); // Delete task
 });
+
+
+Route::get('/admin/banners', [HomeBannerController::class, 'index'])->name('admin.banners.index');
+Route::get('/admin/banners/create', [HomeBannerController::class, 'create'])->name('admin.banners.create');
+Route::post('/admin/banners/store', [HomeBannerController::class, 'store'])->name('admin.banners.store');
+Route::get('/admin/banners/edit/{id}', [HomeBannerController::class, 'edit'])->name('admin.banners.edit');
+Route::put('/admin/banners/update/{id}', [HomeBannerController::class, 'update'])->name('admin.banners.update');
+Route::delete('/admin/banners/{id}', [HomeBannerController::class, 'destroy'])->name('admin.banners.destroy');
+
