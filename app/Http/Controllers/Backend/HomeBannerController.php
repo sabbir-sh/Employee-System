@@ -10,13 +10,11 @@ use Yajra\DataTables\Facades\DataTables;
 
 class HomeBannerController extends Controller
 {
-    public function index(Request $request)
-{
-    // Retrieve all home banners from the database
-    $banners = HomeBanner::all();
-
-    // Return the view for Home Banners page with the data
-    return view('backend.homebanner.index', compact('banners'));
+    public function index()
+    {
+        $banners = HomeBanner::all();
+        $banners = HomeBanner::orderBy('created_at', 'desc')->get();
+        return view('backend.homebanner.index', compact('banners'));
     }
 
 
@@ -39,8 +37,9 @@ class HomeBannerController extends Controller
 
         $imageName = time().'.'.$request->photo->extension();
         $request->photo->move(public_path('uploads/banners'), $imageName);
-
+        
         HomeBanner::create([
+
             'photo' => 'uploads/banners/'.$imageName,
             'position' => $request->position,
             'title' => $request->title,
