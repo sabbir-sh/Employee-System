@@ -166,6 +166,10 @@
             <i class="fa-regular fa-user"></i> All Banner
         </a>
 
+        <a href="{{ route('admin.categories.index') }}">
+            <i class="fa-regular fa-user"></i> All Categories
+        </a>
+
         <a href="{{ route('employee.index') }}">
             <i class="fa-regular fa-user"></i> Employee List
         </a>
