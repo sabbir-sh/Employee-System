@@ -7,6 +7,7 @@ use App\Http\Services\HomeService;
 use App\Models\Category;
 use App\Models\HomeBanner;
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class HomeController extends Controller
 {
@@ -29,16 +30,19 @@ class HomeController extends Controller
     //     return view('frontend.home', compact('categories'));  // Pass categories to the view
     // }
     public function index()
-{
-    // Fetch published banners
-    $banners = HomeBanner::where('published', 1)->get();
+    {
+        // Fetch published banners
+        $banners = HomeBanner::where('published', 1)->get();
 
-    // Fetch all categories
-    $categories = Category::all();
+        // Fetch all categories
+        $categories = Category::all();
 
-    // Pass both banners and categories to the view
-    return view('frontend.home', compact('banners', 'categories'));
-}
+        // Fetch pending tasks
+        $tasks = Task::where('status', 'In_progress')->get();
+
+        // Pass banners, categories, and tasks to the view
+        return view('frontend.home', compact('banners', 'categories', 'tasks'));
+    }
 
 
 }

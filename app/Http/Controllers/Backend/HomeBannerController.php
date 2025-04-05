@@ -38,6 +38,7 @@ class HomeBannerController extends Controller
         $imageName = time().'.'.$request->photo->extension();
         $request->photo->move(public_path('uploads/banners'), $imageName);
         
+
         HomeBanner::create([
 
             'photo' => 'uploads/banners/'.$imageName,
