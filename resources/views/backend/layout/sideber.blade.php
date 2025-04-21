@@ -186,6 +186,10 @@
             <i class="fa-solid fa-plus"></i> Add Employee Task
         </a>
 
+        <a href="{{ route('admin.products.index') }}">
+            <i class="fa-solid fa-plus"></i> All Products
+        </a>
+
     </div>
 
     <script>

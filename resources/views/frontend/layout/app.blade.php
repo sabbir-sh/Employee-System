@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- Add Bootstrap or other CSS frameworks if necessary -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     @yield('custom-style')
 </head>
@@ -25,6 +26,7 @@
 
     <!-- Add Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
 
     @yield('custom-script')
 </body>

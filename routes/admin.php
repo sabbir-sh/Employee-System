@@ -3,6 +3,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\HomeBannerController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\TaskController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -45,5 +46,14 @@ Route::prefix('/admin')->group(function () {
     Route::get('/categories/edit/{id}', [CategoryController::class, 'edit'])->name('admin.categories.edit');
     Route::put('/categories/update/{id}', [CategoryController::class, 'update'])->name('admin.categories.update');
     Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+});
+
+Route::prefix('/admin')->group(function () {
+    Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
+    Route::get('/products/create', [ProductController::class, 'create'])->name('admin.products.create');
+    Route::post('/products/store', [ProductController::class, 'store'])->name('admin.products.store');
+    Route::get('/products/edit/{id}', [ProductController::class, 'edit'])->name('admin.products.edit');
+    Route::put('/products/update/{id}', [ProductController::class, 'update'])->name('admin.products.update');
+    Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
 });
 

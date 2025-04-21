@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\HomeBannerController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,8 +14,8 @@ use Illuminate\Support\Facades\Route;
     //Home Page
     Route::get("/", [HomeController::class,"index"])->name("home");
 
+    Route::get('/product-all', [ProductController::class, 'index'])->name('product.index');
 
-    // Route::get('/', [HomeController::class, 'index'])->name('frontend.categories');
 
 
 
