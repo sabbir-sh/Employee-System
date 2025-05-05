@@ -37,7 +37,7 @@ class HomeBannerController extends Controller
 
         $imageName = time().'.'.$request->photo->extension();
         $request->photo->move(public_path('uploads/banners'), $imageName);
-        
+
 
         HomeBanner::create([
 
@@ -55,7 +55,7 @@ class HomeBannerController extends Controller
 
 
     public function edit($id)
-{
+    {
     $banner = HomeBanner::findOrFail($id);
     return view('Backend.Homebanner.edit', compact('banner'));
     }

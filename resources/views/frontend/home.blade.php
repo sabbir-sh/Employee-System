@@ -37,7 +37,7 @@
                 <div class="carousel-item @if ($loop->first) active @endif">
                     <!-- Image Display Only -->
                     @if ($banner->photo)
-                        <img src="{{ Storage::url($banner->photo) }}" alt="Banner Image" class="d-block w-100 banner-img">
+                        <img src="{{ Storage::url($banner->photo) }}" alt="Banner Image" style="height: 100vh; width: 100%; class="d-block w-100 banner-img">
                     @else
                         <img src="{{ asset('images/no-image.png') }}" alt="No Image" class="d-block w-100 banner-img">
                     @endif
@@ -65,17 +65,20 @@
     <!-- Features Section -->
 
     <div class="container mt-5">
-        <h2 class="text-center mb-4" style="font-size: 2.5rem; font-weight: bold; color: #030303; letter-spacing: 1px; text-transform: uppercase;">Shop By Category</h2>
+        <h2 class="text-center mb-4"
+            style="font-size: 2.5rem; font-weight: bold; color: #212529; letter-spacing: 1px; text-transform: uppercase;">
+            Shop By Category
+        </h2>
 
         <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel" style="position: relative;">
-            <!-- Carousel Indicators -->
+            <!-- Indicators -->
             <div class="carousel-indicators">
                 @foreach ($categories->chunk(4) as $chunkIndex => $chunk)
                     <button type="button" data-bs-target="#categoryCarousel" data-bs-slide-to="{{ $chunkIndex }}"
                             class="{{ $chunkIndex == 0 ? 'active' : '' }}"
                             aria-current="{{ $chunkIndex == 0 ? 'true' : 'false' }}"
                             aria-label="Slide {{ $chunkIndex + 1 }}"
-                            style="background-color: #007bff; border-radius: 50%; width: 15px; height: 15px; margin: 0 5px;">
+                            style="background-color: #333; border-radius: 50%; width: 12px; height: 12px; margin: 0 5px;">
                     </button>
                 @endforeach
             </div>
@@ -83,22 +86,27 @@
             <div class="carousel-inner">
                 @foreach ($categories->chunk(4) as $chunkIndex => $chunk)
                     <div class="carousel-item {{ $chunkIndex == 0 ? 'active' : '' }}">
-                        <div class="row row-cols-1 row-cols-md-4 g-4 px-4 py-3" style="transition: transform 0.5s ease;">
+                        <div class="row row-cols-1 row-cols-md-4 g-4 px-4 py-3">
                             @foreach ($chunk as $category)
                                 <div class="col">
-                                    <div class="card h-100" style="border: none; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease-in-out; background: #f8f9fa;">
-                                        <div class="text-center p-4" style="background-color: #ffffff; border-radius: 15px; transition: transform 0.3s;">
+                                    <div class="card h-100"
+                                         style="border: none; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+                                        <div class="text-center p-4"
+                                             style="background-color: #fff; border-bottom: 1px solid #eee;">
                                             @if ($category->icon)
-                                                <img src="{{ asset('storage/'.$category->icon) }}" alt="{{ $category->title }} Icon"
-                                                     style="width: 100%; max-height: 220px; object-fit: contain; transition: transform 0.3s ease;">
+                                                <img src="{{ asset('storage/'.$category->icon) }}"
+                                                     alt="{{ $category->title }} Icon"
+                                                     style="width: 100%; max-height: 200px; object-fit: contain; transition: transform 0.3s;">
                                             @else
-                                                <div style="height: 220px; background-color: #e9ecef; display: flex; justify-content: center; align-items: center; border: 1px dashed #ccc; border-radius: 10px;">
-                                                    <span style="color: #888; font-size: 18px;">No Icon</span>
+                                                <div style="height: 200px; background-color: #f1f1f1; display: flex; justify-content: center; align-items: center; border-radius: 10px;">
+                                                    <span style="color: #aaa; font-size: 16px;">No Icon</span>
                                                 </div>
                                             @endif
                                         </div>
-                                        <div class="card-body text-center" style="padding-bottom: 1.5rem;">
-                                            <h5 style="font-size: 1.2rem; font-weight: 600; color: #333; letter-spacing: 0.5px; text-transform: capitalize;">{{ $category->title }}</h5>
+                                        <div class="card-body text-center">
+                                            <h5 style="font-size: 1.1rem; font-weight: 600; color: #333; margin: 0;">
+                                                {{ $category->title }}
+                                            </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -108,59 +116,46 @@
                 @endforeach
             </div>
 
-            <!-- Carousel Navigation Buttons -->
+            <!-- Navigation Buttons -->
             <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev"
-                    style="position: absolute; top: 50%; left: -35px; width: 60px; height: 60px; background-color: #007bff; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: none; z-index: 5; display: flex; align-items: center; justify-content: center;">
-                <span class="carousel-control-prev-icon" style="filter: invert(1); width: 25px; height: 25px;"></span>
+                    style="position: absolute; top: 45%; left: -25px; width: 45px; height: 45px; background-color: #d4c1c1; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.15); border: none; z-index: 5;">
+                <span class="carousel-control-prev-icon" style="filter: invert(1); width: 20px; height: 20px;"></span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next"
-                    style="position: absolute; top: 50%; right: -35px; width: 60px; height: 60px; background-color: #007bff; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: none; z-index: 5; display: flex; align-items: center; justify-content: center;">
-                <span class="carousel-control-next-icon" style="filter: invert(1); width: 25px; height: 25px;"></span>
+                    style="position: absolute; top: 45%; right: -25px; width: 45px; height: 45px; background-color: #d4c1c1; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.15); border: none; z-index: 5;">
+                <span class="carousel-control-next-icon" style="filter: invert(1); width: 20px; height: 20px;"></span>
             </button>
         </div>
     </div>
 
 
 
-
-
-    <!-- Task Section -->
-
-    <div class="container mt-5">
-        <h2 class="text-center mb-4" style="font-size: 2.5rem; font-weight: bold; color: #030303;">
-            All Tasks Pending
-        </h2>
-
-        <!-- Categories Row -->
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-            @foreach($tasks as $task)
-            <div class="col">
-                <div class="card shadow-sm border-0 h-100" style="transition: transform 0.3s ease-in-out;">
-                    <div class="category-icon text-center p-4"
-                         style="border-radius: 10px; overflow: hidden;">
-
-                        @if ($task->title)
-                            <h4 class="text-primary">{{ $task->title }}</h4>
-                        @else
-                            <div class="no-icon-placeholder rounded-circle d-flex justify-content-center align-items-center"
-                                 style="width: 300px; height: 300px; background-color: #f0f0f0;
-                                        border-radius: 10px; border: 1px dashed #ccc;">
-                                <span class="text-muted" style="font-size: 18px;">No Icon</span>
-                            </div>
-                        @endif
-                    </div>
-
-                    <div class="card-body text-center">
-                        <h5 class="card-title" style="font-size: 1.25rem; font-weight: 600; color: #333;">
-                            {{ $task->title ?: 'Untitled Task' }}
-                        </h5>
-                        <p class="card-text">{{ $task->description }}</p>
-                    </div>
+    <!-- Product Section -->
+    <section class="py-5" style="background-color: #f9f9f9;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="{{ asset('assets/ee.jpg') }}" alt="E-System" class="img-fluid rounded-4 shadow">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="mb-3" style="font-weight: bold; color: #0056b3;">About E-System</h2>
+                    <p style="font-size: 1.1rem; color: #555;">
+                        Welcome to <strong>E-System</strong>, your ultimate destination for an efficient, secure, and enjoyable online shopping experience. Our platform connects customers with a wide variety of high-quality products across various categories including electronics, fashion, home decor, and much more.
+                    </p>
+                    <p style="font-size: 1rem; color: #666;">
+                        At E-System, we prioritize user experience and customer satisfaction. With a simple and intuitive interface, fast search functionality, and detailed product descriptions, we aim to make shopping easier than ever before. Whether you're browsing for the latest tech gadgets or seeking stylish fashion accessories, you'll find everything you need with just a few clicks.
+                    </p>
+                    <p style="font-size: 1rem; color: #666;">
+                        Our mission is to offer not only a platform for shopping but a seamless, enjoyable experience that you can trust. With secure payment methods, fast and reliable shipping, and dedicated customer support, E-System is here to help you get the best deals with peace of mind.
+                    </p>
+                    <p style="font-size: 1rem; color: #666;">
+                        We continuously strive to innovate and stay ahead of trends to ensure we bring the best products to our customers. Join us today and discover how E-System is transforming online shopping!
+                    </p>
+                    <a href="{{ route('product.index') }}" class="btn btn-primary mt-3 px-4">Start Shopping Now</a>
                 </div>
             </div>
-            @endforeach
         </div>
-    </div>
+    </section>
 
 
 

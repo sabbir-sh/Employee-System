@@ -56,21 +56,21 @@
             <div class="row text-center">
                 <!-- Footer Branding -->
                 <div class="col-md-4 mb-3">
-                    <h5 class="text-primary">Your Website</h5>
-                    <p>&copy; 2025 Your Website. All rights reserved.</p>
+                    <h5 class="text-primary">E-System</h5>
+                    <p>&copy; 2025 E-System. All rights reserved.</p>
                 </div>
 
-                {{-- <!-- Quick Links -->
+                <!-- Quick Links -->
                 <div class="col-md-4 mb-3">
                     <h6 class="text-uppercase">Quick Links</h6>
                     <ul class="list-unstyled">
                         <li><a href="/" class="text-decoration-none text-dark">Home</a></li>
-                        <li><a href="/about" class="text-decoration-none text-dark">About</a></li>
-                        <li><a href="/contact" class="text-decoration-none text-dark">Contact</a></li>
-                        <li><a href="/privacy&policy" class="text-decoration-none text-dark">Privacy & Policy </a></li>
-                        <li><a href="/terms" class="text-decoration-none text-dark">Term Conditions</a></li>
+                        <li><a href="/" class="text-decoration-none text-dark">About</a></li>
+                        <li><a href="/" class="text-decoration-none text-dark">Contact</a></li>
+                        <li><a href="/" class="text-decoration-none text-dark">Privacy & Policy </a></li>
+                        <li><a href="/" class="text-decoration-none text-dark">Term Conditions</a></li>
                     </ul>
-                </div> --}}
+                </div>
 
                 <!-- Social Media Links -->
                 <div class="col-md-4">
