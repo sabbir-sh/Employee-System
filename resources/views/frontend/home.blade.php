@@ -34,20 +34,30 @@
     <div id="bannerSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
             @forelse ($banners as $banner)
-                <div class="carousel-item @if ($loop->first) active @endif">
-                    <!-- Image Display Only -->
+                <div class="carousel-item @if ($loop->first) active @endif" style="position: relative;">
                     @if ($banner->photo)
-                        <img src="{{ Storage::url($banner->photo) }}" alt="Banner Image" style="height: 100vh; width: 100%; class="d-block w-100 banner-img">
+                        <img src="{{ Storage::url($banner->photo) }}" alt="Banner Image" class="d-block w-100 banner-img" style="height: 98vh; width: 100%;">
                     @else
-                        <img src="{{ asset('images/no-image.png') }}" alt="No Image" class="d-block w-100 banner-img">
+                        <img src="{{ asset('images/no-image.png') }}" alt="No Image" class="d-block w-100 banner-img" style="height: 100vh; width: 100%;">
                     @endif
+
+                    <!-- Text Overlay -->
+                    <div style="position: absolute; bottom: 20%; left: 10%; background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px; color: #fff;">
+                        <h5 style="margin: 0; font-size: 2rem;">{{ $banner->title ?? 'Your Default Title' }}</h5>
+                        <p style="margin: 5px 0 0;">{{ $banner->subtitle ?? 'Your Default Subtitle' }}</p>
+                    </div>
                 </div>
             @empty
-                <div class="carousel-item active">
-                    <img src="{{ asset('images/no-image.png') }}" alt="No Image" class="d-block w-100 banner-img">
+                <div class="carousel-item active" style="position: relative;">
+                    <img src="{{ asset('images/no-image.png') }}" alt="No Image" class="d-block w-100 banner-img" style="height: 100vh; width: 100%;">
+                    <div style="position: absolute; bottom: 20%; left: 10%; background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px; color: #fff;">
+                        <h5 style="margin: 0; font-size: 2rem;">No Banners Available</h5>
+                        <p style="margin: 5px 0 0;">Please upload banners to display here.</p>
+                    </div>
                 </div>
             @endforelse
         </div>
+
 
         <!-- Carousel Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#bannerSlider" data-bs-slide="prev">

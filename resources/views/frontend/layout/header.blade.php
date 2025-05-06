@@ -4,51 +4,53 @@
     <div class="container py-3">
       <div class="d-flex justify-content-between align-items-center">
         <!-- Logo -->
-        <a href="/" class="text-warning text-decoration-none">
-          <h1 class="h4 mb-0">E-System</h1>
+        <a href="/"
+            class="text-black text-decoration-none">
+         <h1 class="h1 mb-0">E-System</h1>
         </a>
+
 
         <!-- Desktop Navigation -->
         <nav class="d-none d-md-block">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link text-warning" href="/"
+              <a class="nav-link text-black" href="/"
                  style="border-bottom: 2px solid transparent;"
                  onmouseover="this.style.borderBottom='2px solid white'"
                  onmouseout="this.style.borderBottom='2px solid transparent'">
-                Home
+                <h1 class="h5 mb-0">Home</h1>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" href="#"
+              <a class="nav-link text-black" href="#"
                  style="border-bottom: 2px solid transparent;"
                  onmouseover="this.style.borderBottom='2px solid white'"
                  onmouseout="this.style.borderBottom='2px solid transparent'">
-                About
+                <h1 class="h5 mb-0">About</h1>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" href="#"
+              <a class="nav-link text-black" href="#"
                  style="border-bottom: 2px solid transparent;"
                  onmouseover="this.style.borderBottom='2px solid white'"
                  onmouseout="this.style.borderBottom='2px solid transparent'">
-                Services
+                <h1 class="h5 mb-0">Services</h1>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" href="#"
+              <a class="nav-link text-black" href="#"
                  style="border-bottom: 2px solid transparent;"
                  onmouseover="this.style.borderBottom='2px solid white'"
                  onmouseout="this.style.borderBottom='2px solid transparent'">
-                Contact
+                <h1 class="h5 mb-0">Contact</h1>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" href="{{ route('product.index') }}"
+              <a class="nav-link text-black" href="{{ route('product.index') }}"
                  style="border-bottom: 2px solid transparent;"
                  onmouseover="this.style.borderBottom='2px solid white'"
                  onmouseout="this.style.borderBottom='2px solid transparent'">
-                Product
+                <h1 class="h5 mb-0">Product</h1>
               </a>
             </li>
           </ul>
