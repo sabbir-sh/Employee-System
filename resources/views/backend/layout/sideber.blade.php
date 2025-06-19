@@ -161,6 +161,9 @@
         </div>
 
         <!-- Sidebar Links -->
+        <a href="{{ route('admin.banners.index') }}">
+            <i class="fa-solid fa-house-user"></i> Dashboard
+        </a>
 
         <a href="{{ route('admin.banners.index') }}">
             <i class="fa-regular fa-user"></i> All Banner
@@ -170,25 +173,25 @@
             <i class="fa-regular fa-user"></i> All Categories
         </a>
 
-        <a href="{{ route('employee.index') }}">
+        {{-- <a href="{{ route('employee.index') }}">
             <i class="fa-regular fa-user"></i> Employee List
-        </a>
+        </a> --}}
 
-        <a href="{{ route('employee.create') }}">
+        {{-- <a href="{{ route('employee.create') }}">
             <i class="fa-solid fa-plus"></i> Add Employee
-        </a>
+        </a> --}}
 
-        <a href="{{ route('tasks.index') }}">
+        {{-- <a href="{{ route('tasks.index') }}">
             <i class="fa-solid fa-list-check"></i> Employee Task List
         </a>
 
         <a href="{{ route('tasks.create') }}">
             <i class="fa-solid fa-plus"></i> Add Employee Task
-        </a>
+        </a> --}}
 
-        <a href="{{ route('admin.products.index') }}">
+        {{-- <a href="{{ route('admin.products.index') }}">
             <i class="fa-solid fa-plus"></i> All Products
-        </a>
+        </a> --}}
 
     </div>
 
