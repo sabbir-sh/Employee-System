@@ -1,99 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer Example</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Font Awesome for Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<footer style="background:#f8f2f2; padding:40px 20px; font-family:Arial, sans-serif; color:#333;">
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:auto; gap:20px;">
 
-    <!-- Bootstrap CSS (optional, if not already included) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Logo & Address -->
+        <div style="flex:1 1 220px; min-width:200px;">
+            <img src="{{ asset('assets/img/ecom.png') }}" alt="Logo" style="width:120px; margin-bottom:10px;">
 
-    <!-- Custom CSS -->
-    <style>
-        /* Footer Styles */
-        footer {
-            background-color: #f8f9fa; /* Light gray background */
-            color: #6c757d; /* Subtle text color */
-            border-top: 1px solid #dee2e6; /* Soft border */
-        }
-
-        footer p {
-            font-size: 14px;
-            margin-bottom: 0;
-        }
-
-        /* Social Media Links */
-        .social-links a {
-            color: #6c757d; /* Default color for icons */
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #007bff; /* Hover color */
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 576px) {
-            footer p {
-                font-size: 12px;
-            }
-
-            .social-links a {
-                font-size: 16px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-
-    <!-- Footer -->
-    <footer class="bg-light py-5">
-        <div class="container">
-            <div class="row text-center">
-                <!-- Footer Branding -->
-                <div class="col-md-4 mb-3">
-                    <h5 class="text-primary">E-System</h5>
-                    <p>&copy; 2025 E-System. All rights reserved.</p>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="col-md-4 mb-3">
-                    <h6 class="text-uppercase">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="/" class="text-decoration-none text-dark">Home</a></li>
-                        <li><a href="/" class="text-decoration-none text-dark">About</a></li>
-                        <li><a href="/" class="text-decoration-none text-dark">Contact</a></li>
-                        <li><a href="/" class="text-decoration-none text-dark">Privacy & Policy </a></li>
-                        <li><a href="/" class="text-decoration-none text-dark">Term Conditions</a></li>
-                    </ul>
-                </div>
-
-                <!-- Social Media Links -->
-                <div class="col-md-4">
-                    <h6 class="text-uppercase">Follow Us</h6>
-                    <div class="d-flex justify-content-center">
-                        <a href="https://facebook.com" target="_blank" class="mx-2 text-primary">
-                            <i class="fab fa-facebook fa-lg"></i>
-                        </a>
-                        <a href="https://twitter.com" target="_blank" class="mx-2 text-info">
-                            <i class="fab fa-twitter fa-lg"></i>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" class="mx-2 text-danger">
-                            <i class="fab fa-instagram fa-lg"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <p><strong>Headquarters</strong></p>
+            <p>Dhaka-1216</p>
+            <p style="margin-top:10px;"><i class="fa-brands fa-square-whatsapp"
+                    style="color:green; margin-right:8px;"></i> +880 1750512161</p>
         </div>
-    </footer>
 
+        <!-- About Us -->
+        <div style="flex:1 1 220px; min-width:200px;">
+            <h4 style="font-size:16px; margin-bottom:10px;">About</h4>
+            <ul style="list-style:none; padding:0; margin:0;">
+                <li><a href="/about-us" style="color:#333; text-decoration:none;">About</a></li>
+                <li><a href="#" style="color:#333; text-decoration:none;">Contact Us</a></li>
+                <li><a href="#" style="color:#333; text-decoration:none;">FAQ</a></li>
+                <li><a href="#" style="color:#333; text-decoration:none;">Privacy Policy</a></li>
+                <li><a href="#" style="color:#333; text-decoration:none;">Cookie Policy</a></li>
+                <li><a href="#" style="color:#333; text-decoration:none;">T&C</a></li>
+            </ul>
+        </div>
 
-    <!-- Optional Bootstrap JS (if needed) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+        <!-- My Account -->
+        <div style="flex:1 1 220px; min-width:200px;">
+            <h4 style="font-size:16px; margin-bottom:10px;">My Account</h4>
+            <ul style="list-style:none; padding:0; margin:0;">
+                <li><a href="#" style="color:#333; text-decoration:none;">Login</a></li>
+                <li><a href="#" style="color:#333; text-decoration:none;">Order History</a></li>
+                <li><a href="#" style="color:#333; text-decoration:none;">My Wishlist</a></li>
+                <li><a href="#" style="color:#333; text-decoration:none;">Track Order</a></li>
+            </ul>
+        </div>
 
+        <!-- App & Subscribe -->
+        <div style="flex:1 1 220px; min-width:200px;">
+            <h4 style="font-size:16px; margin-bottom:10px;">Download App Now!</h4>
+            <div style="display:flex; gap:10px; margin-bottom:15px;">
+                <img src="https://bioxincosmeceuticals.com/blog/wp-content/uploads/2025/05/google-play.webp"
+                    alt="Google Play" style="width:130px;">
+                <img src="https://bioxincosmeceuticals.com/blog/wp-content/uploads/2025/05/apple-play.webp"
+                    alt="App Store" style="width:130px;">
+            </div>
+            <h5 style="font-size:15px; margin-bottom:5px;">Get Updates!</h5>
+            <p style="font-size:14px; margin-bottom:10px;">Enter your email to be the first to know about new
+                collections and product launches!</p>
+            <form style="display:flex; flex-direction:column;">
+                <input type="email" placeholder="Your email address" required
+                    style="padding:10px; border:1px solid #ccc; margin-bottom:10px; width:100%;">
+                <button type="submit" style="padding:10px; background:#000; color:#fff; border:none; cursor:pointer;">
+                    <i class="fas fa-paper-plane" style="margin-right:5px;"></i> Subscribe
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div style="text-align:center; margin-top:30px; font-size:14px; color:#777;">
+        &copy; 2025 @ All rights reserved.
+    </div>
+</footer>
